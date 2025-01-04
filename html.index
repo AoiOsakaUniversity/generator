@@ -7,12 +7,23 @@
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
     <title>叱咤激励さん</title>
+    <meta name="description" content="叱咤激励の言葉をランダムに生成するウェブアプリです。">
+    <meta name="author" content="あなたの名前">
 </head>
 <body>
-    <button id="generateButton">叱咤激励</button>
-    <p id="result"></p>
+    <header>
+        <h1>叱咤激励さん</h1>
+    </header>
+    <main>
+        <button id="generateButton" aria-label="叱咤激励を生成">叱咤激励</button>
+        <p id="result" aria-live="polite"></p>
+    </main>
+    <footer>
+        <p>&copy; 2025 あなたの名前</p>
+    </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
+
 

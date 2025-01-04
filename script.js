@@ -2,7 +2,7 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker
         .register('service-worker.js')
         .then(() => console.log('Service Worker registered'))
-        .catch((err) => console.error('Service Worker registration failed:', err));
+        .catch(err => console.error('Service Worker registration failed:', err));
 }
 
 const generateButton = document.getElementById('generateButton');
@@ -28,6 +28,7 @@ const compliments = [
     '将来有望だね！',
     'いつもがんばっててえらい！',
 ];
+
 const scoldings = [
     'もっと頑張りましょう',
     '厳しいこと言うけど、君自身はそんなに凄い人じゃないことに気づいた方がいいよ',
@@ -48,15 +49,16 @@ let count = 0;
 
 generateButton.addEventListener('click', () => {
     count++;
-    resultElement.classList.remove('black', 'blue');
 
-    if (count % 10 === 0) {
-        const randomIndex = Math.floor(Math.random() * scoldings.length);
-        resultElement.textContent = scoldings[randomIndex];
-        resultElement.classList.add('blue');
-    } else {
-        const randomIndex = Math.floor(Math.random() * compliments.length);
-        resultElement.textContent = compliments[randomIndex];
-        resultElement.classList.add('black');
-    }
+    // 現在のスタイルをクリア
+    resultElement.className = '';
+
+    // メッセージの生成
+    const messages = count % 10 === 0 ? scoldings : compliments;
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    const message = messages[randomIndex];
+
+    // 表示とスタイルの設定
+    resultElement.textContent = message;
+    resultElement.classList.add(count % 10 === 0 ? 'blue' : 'black');
 });

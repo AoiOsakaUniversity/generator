@@ -1,24 +1,46 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif; /* フォントを具体的に指定 */
     text-align: center;
+    background-color: #f9f9f9; /* 背景色を追加して視覚的なアクセント */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 button {
     padding: 10px 20px;
     font-size: 16px;
+    font-weight: bold; /* ボタンに強調を追加 */
+    color: white;
+    background-color: #0078d4; /* ボタンの背景色を追加 */
+    border: none;
+    border-radius: 5px; /* 角を丸めて柔らかい印象に */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* ホバー時のスムーズな変化 */
+}
+
+button:hover {
+    background-color: #005a9e; /* ホバー時の色変更 */
 }
 
 p {
     font-size: 24px;
     margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px; /* テキストの背景に柔らかさを追加 */
+    display: inline-block;
 }
 
 /* Text colors */
 .black {
-    color: black;
+    color: #000; /* カラーコードを明確に指定 */
 }
 
 .blue {
-    color: blue;
+    color: #0078d4; /* ボタン色と統一感を持たせる */
 }
 
